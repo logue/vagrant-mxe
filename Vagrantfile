@@ -25,8 +25,14 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "./share", "/home/vagrant/share", create:"true"
 
 	# Initialize virtual machine.
+	config.vm.provision "shell", :path => "provision/update.sh", :privileged => true, run: "always"
 	config.vm.provision "shell", :path => "provision/init.sh", :privileged => true
+
 	# Setup MXE
 	config.vm.provision "shell", :path => "provision/init_mxe.sh", :privileged => false
+	config.vm.provision "shell", :path => "provision/update_mxe.sh", :privileged => false, run: "always"
+
+	# finalize
+	config.vm.provision "shell", :path => "provision/finally.sh", :privileged => true, run: "always"
 end
 

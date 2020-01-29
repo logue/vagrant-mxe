@@ -2,12 +2,6 @@
 
 echo 'Initilizing...'
 
-apt-get update
-apt-get upgrade
-
-# install virtualbox mount tool
-apt-get install -y virtualbox-guest-x11
-
 # install utility
 apt-get install -y zip git
 
@@ -53,5 +47,3 @@ apt-get install -y \
 
 apt-get install -y \
     libtool-bin
-
-apt-get autoclean
