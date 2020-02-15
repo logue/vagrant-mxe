@@ -1,8 +1,8 @@
-# mxe vagarant box
+# mxe vagrant box
 
 This repository contains everything necessary to build a [Vagrant](https://www.vagrantup.com/) box based on [Debian buster](https://www.debian.org/releases/buster/) with a preinstalled [MinGW Cross Environment (MXE)](http://mxe.cc/) cross-building environment.
 
-Instead of building a base box from scratch an [existing box](https://atlas.hashicorp.com/debian/boxes/buster64) is modified and repackaged as described by [Nicholas Cerminara](https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one).
+Instead of building a base box from scratch an [existing box](https://app.vagrantup.com/debian/boxes/buster64) is modified and repackaged as described by [Nicholas Cerminara](https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one).
 
 ## Usage
 

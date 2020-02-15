@@ -12,7 +12,7 @@ JOBS := $(nproc)
 #MXE_TMP := /tmp
 
 # This variable controls the targets that will build.
-MXE_TARGETS := x86_64-w64-mingw32.static
+# MXE_TARGETS := x86_64-w64-mingw32.static
 
 # This variable controls which plugins are in use.
 # See plugins/README.md for further information.
@@ -20,10 +20,10 @@ MXE_TARGETS := x86_64-w64-mingw32.static
 
 # This variable controls the download mirror for SourceForge,
 # when it is used. Enabling the value below means auto.
-SOURCEFORGE_MIRROR := jaist.dl.sourceforge.net
+# SOURCEFORGE_MIRROR := jaist.dl.sourceforge.net
 
 # The three lines below makes `make` build these "local
 # packages" instead of all packages
 LOCAL_PKG_LIST := gcc
 #.DEFAULT_GOAL  := local-pkg-list
-local-pkg-list: $$(LOCAL_PKG_LIST)
+local-pkg-list: $(LOCAL_PKG_LIST)

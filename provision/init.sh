@@ -3,9 +3,13 @@
 echo 'Initilizing...'
 
 # install utility
-apt-get install -y zip git
+apt-get install -y zip git tofrodos
 
-# install mxe dependings
+# Make alias for dos2unix and unix2dos
+alias dos2unix='fromdos' 
+alias unix2dos='todos'
+
+echo 'Install mxe dependings...'
 # @see http://mxe.cc/#requirements-debian
 apt-get install -y \
     autoconf \
@@ -47,3 +51,5 @@ apt-get install -y \
 
 apt-get install -y \
     libtool-bin
+
+echo 'Initialize done.'
