@@ -7,7 +7,7 @@ unless Vagrant.has_plugin?("vagrant-vbguest")
 end
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "generic/debian10"
+	config.vm.box = "debian/buster64"
 
 	# @see http://mxe.cc/#requirements
 	config.vm.provider "virtualbox" do |v|

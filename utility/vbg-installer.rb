@@ -7,8 +7,8 @@ module Utility
         def install(opts=nil, &block)
             cmd = <<~SCRIPT
                 cat <<EOF > /etc/apt/sources.list.d/snapshot_archive.list
-                deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/20200128T095152Z/ buster main
-                deb [check-valid-until=no] http://snapshot.debian.org/archive/debian-security/20200128T095152Z/ buster/updates main
+                deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/20200402T150804Z/ buster main
+                deb [check-valid-until=no] http://snapshot.debian.org/archive/debian-security/20200402T205302Z/ buster/updates main
                 EOF
             SCRIPT
 
