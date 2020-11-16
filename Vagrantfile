@@ -11,7 +11,10 @@ Vagrant.configure("2") do |config|
   config.vm.box = "debian/contrib-buster64"
 
   # mount
-  config.vm.synced_folder "./share", "/home/vagrant/share", create:"true"
+  if ENV['FIRST_RUN'] == 'true'
+    config.vbguest.auto_update = false
+  end
+  config.vm.synced_folder "./share", "/home/vagrant/share", create: true, type: "virtualbox"
 
   # @see http://mxe.cc/#requirements
   config.vm.provider :virtualbox do |v|

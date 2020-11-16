@@ -13,6 +13,19 @@ Instead of building a base box from scratch an [existing box](https://app.vagran
 5. Enter virtual machine with `vagrant ssh`.
 6. Execute the build command in the project directory in the `share` directory.
 
+## Troubleshooting
+
+### Vagrant was unable to mount VirtualBox shared folders.
+
+This error occurs when the host vbguest and client vbguest versions do not match.
+Type and update the following commands.
+
+```sh
+vagrant vbguest
+```
+
+Reload when you're done.
+
 ## Typical build script
 
 Put this file in the project directory where you want to build and execute it with ssh.
