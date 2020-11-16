@@ -7,24 +7,26 @@ unless Vagrant.has_plugin?("vagrant-vbguest")
 end
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "debian/buster64"
+  # Box
+  config.vm.box = "debian/contrib-buster64"
+
+  # mount
+  config.vm.synced_folder "./share", "/home/vagrant/share", create:"true"
 
   # @see http://mxe.cc/#requirements
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--memory", 2048]
     v.memory = 4096
-    v.cpus = 4
+    v.cpus = 8
+    # Enable symbolic link to shared foldar
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/share", "1"]
   end
 
-  # Load custom vbguest installer
-  # if defined?(VagrantVbguest::Installers::Debian)
-  #    require_relative 'utility/vbg-installer'
-  #    config.vbguest.installer = Utility::DebianCustom
-  # end
-
-  # mount 
-  config.vm.synced_folder "./share", "/home/vagrant/share", create:"true"
-
+  config.vm.provision :shell, inline:<<-EOS
+    echo "set grub-pc/install_devices /dev/sda" | debconf-communicate
+    apt-get update
+    apt-get -y upgrade
+EOS
   # Initialize virtual machine.
   config.vm.provision "shell", :path => "provision/update.sh", :privileged => true, run: "always"
   config.vm.provision "shell", :path => "provision/init.sh", :privileged => true
@@ -36,4 +38,3 @@ Vagrant.configure("2") do |config|
   # finalize
   config.vm.provision "shell", :path => "provision/finally.sh", :privileged => true, run: "always"
 end
-

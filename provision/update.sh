@@ -2,5 +2,11 @@
 
 echo 'Update system.'
 
-apt-get update
-apt-get upgrade -y
+# Update Repository cache
+apt update
+# Update packages
+apt upgrade -y
+# Remove cache
+apt autoremove -y
+
+echo 'Finish update system.'

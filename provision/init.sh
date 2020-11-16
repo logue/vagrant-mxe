@@ -3,15 +3,15 @@
 echo 'Initilizing...'
 
 # install utility
-apt-get install -y zip git tofrodos
+apt install -y zip git tofrodos
 
 # Make alias for dos2unix and unix2dos
-alias dos2unix='fromdos' 
+alias dos2unix='fromdos'
 alias unix2dos='todos'
 
 echo 'Install mxe dependings...'
 # @see http://mxe.cc/#requirements-debian
-apt-get install -y \
+apt install -y \
     autoconf \
     automake \
     autopoint \
@@ -37,7 +37,6 @@ apt-get install -y \
     p7zip-full \
     patch \
     perl \
-    pkg-config \
     python \
     ruby \
     sed \
@@ -46,10 +45,7 @@ apt-get install -y \
     xz-utils
 
 # for build 32bit binary
-apt-get install -y \
+apt install -y \
     g++-multilib libc6-dev-i386
-
-apt-get install -y \
-    libtool-bin
 
 echo 'Initialize done.'
