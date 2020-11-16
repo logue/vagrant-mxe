@@ -7,10 +7,11 @@ Instead of building a base box from scratch an [existing box](https://app.vagran
 ## Usage
 
 1. Modify `share/mxe/settings.mk`.
-2. Run `vagrant up --provision`.
-3. Put project directory onto `share`.
-4. Enter virtual machine with `vagrant ssh`.
-5. Execute the build command in the project directory in the `share` directory.
+2. Install vagrant-vbguest. (type `vagrant plugin install vagrant-vbguest`.)
+3. Run `vagrant up --provision`.
+4. Put project directory onto `share`.
+5. Enter virtual machine with `vagrant ssh`.
+6. Execute the build command in the project directory in the `share` directory.
 
 ## Typical build script
 
