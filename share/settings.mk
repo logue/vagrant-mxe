@@ -3,7 +3,7 @@
 
 # This variable controls the number of compilation processes
 # within one package ("intra-package parallelism").
-JOBS := $(nproc)
+JOBS := 8
 
 # This variable controls where intermediate files are created
 # this is necessary when compiling inside a virtualbox shared
@@ -16,7 +16,7 @@ MXE_TARGETS=i686-w64-mingw32.static x86_64-w64-mingw32.static
 
 # This variable controls which plugins are in use.
 # See plugins/README.md for further information.
-MXE_PLUGIN_DIRS=plugins/gcc10
+#override MXE_PLUGIN_DIRS += plugins/apps plugins/native
 
 # This variable controls the download mirror for SourceForge,
 # when it is used. Enabling the value below means auto.
