@@ -37,15 +37,16 @@ apt install -y \
     p7zip-full \
     patch \
     perl \
+    pkg-config \
     python \
     ruby \
+    scons \
     sed \
     unzip \
     wget \
     xz-utils
 
-# for build 32bit binary
-apt install -y \
-    g++-multilib libc6-dev-i386
+# mount virtual box
+sudo apt install build-essential dkms linux-headers-$(uname -r)
 
 echo 'Initialize done.'
